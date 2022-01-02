@@ -1,15 +1,15 @@
 # Python library for PMS7003 sensor
 
 ## Dependencies 
-This software requires `pyserial` library. 
+This software requires the `pyserial` library. 
 
 Installation: `pip3 install -r requirements.txt` or `pip3 install pyserial`.
 
 ## Quick start
-1. Download this repository and copy the `pms7003.py` file to your project directory.
+1. Clone this repository and copy the `pms7003.py` file into your project directory.
 2. Import the module: `from pms7003 import PMS7003`
 3. Create a new object: `sensor = PMS7003('/dev/ttyUSB0')`
-    >**Note:**  Depending on number of connected devices and used operating system PMS7003 may be labeled differently e.g. `ttyUSB1`, `COM0`, `COM1`, etc. 
+    >**Note:**  Depending on the number of connected devices and used operating system PMS7003 may be labeled differently e.g. `ttyUSB1`, `COM0`, `COM1`, etc. 
 4. Read data: `sensor.read()`
 
 ## Output data format
@@ -27,7 +27,7 @@ The `read()` function returns a dictionary with the following set of keys:
 * `part050` - number of particles with diameter greater than 5.0 μm (in 100 ml of air)
 * `part100` - number of particles with diameter greater than 10 μm (in 100 ml of air)
 
->**Note:** The datasheet recommends to use *data corrected to standard conditions* in industrial environment.
+>**Note:** The datasheet recommends to use *data corrected to standard conditions* in an industrial environment.
 
 >**Note:** Data labeled as *under atmospheric conditions* are not corrected due to atmospheric pressure.
 > It means that even with a constant number of PM particles in the air the readout may vary if the atmospheric pressure changes. 
